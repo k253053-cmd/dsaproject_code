@@ -596,6 +596,29 @@ class simulation{
 		this->foodcount=50;
 		this->obstaclecount=15; 		
 	}
+void feedorganism(){
+        node*temp =p.head;
+        while(temp!=NULL ){
+            if(temp->data.alive){
+                if(isfood(temp->data.x,temp->data.y)){
+temp->data.eat();
+w.removefood(temp->data.x,temp->data.y);
+foodcount--;
+                }
+}
+temp=temp->next;
+            }
+
+        }
+    
+		  bool isfood(int x,int y){
+if(arr[x][y]=='*'){
+return true;
+}
+else{
+    return false;
+}
+    }
  
 };
 
